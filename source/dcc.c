@@ -1,4 +1,4 @@
-/* $EPIC: dcc.c,v 1.86 2004/01/08 20:14:57 jnelson Exp $ */
+/* $EPIC: dcc.c,v 1.87 2004/01/27 04:41:39 crazyed Exp $ */
 /*
  * dcc.c: Things dealing client to client connections. 
  *
@@ -1485,7 +1485,7 @@ static	void	dcc_getfile (char *args, int resume)
 			set_server_protocol_state(from_server, 0);
 			send_ctcp(CTCP_PRIVMSG, user, CTCP_DCC, 
 #if 1
-				strchr(dcc->description, space)
+				sindex(dcc->description, space)
 				? "RESUME \"%s\" %s %ld"
 				: "RESUME %s %s %ld", 
 				dcc->description,
