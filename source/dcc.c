@@ -1,4 +1,4 @@
-/* $EPIC: dcc.c,v 1.84 2003/12/13 17:25:58 jnelson Exp $ */
+/* $EPIC: dcc.c,v 1.85 2004/01/03 19:57:25 crazyed Exp $ */
 /*
  * dcc.c: Things dealing client to client connections. 
  *
@@ -946,6 +946,7 @@ static void	dcc_send_booster_ctcp (DCC_list *dcc)
 		yell("I do not know what your address is because you asked "
 		     "me for an address family that I don't support.");
 
+	    dcc->flags |= DCC_DELETE;
 	    return;
 	}
 

@@ -117,6 +117,7 @@ Timeval double_to_timeval 	(double);
 const char *	plural 		(int);
 double	time_to_next_minute 	(void);
 char *	remove_trailing_spaces 	(char *, size_t *cluep);
+char *  forcibly_remove_trailing_spaces (char *foo, size_t *cluep);
 char *	ltoa 			(long);
 char *	ftoa			(double);
 char *	strformat 		(char *, const char *, ssize_t, int);
