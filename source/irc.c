@@ -52,7 +52,7 @@ const char internal_version[] = "20040219";
 /*
  * In theory, this number is incremented for every commit.
  */
-const unsigned long	commit_id = 711;
+const unsigned long	commit_id = 710;
 
 /*
  * As a way to poke fun at the current rage of naming releases after
@@ -186,9 +186,6 @@ char *		highlight_char;
 
 /* Output which is displayed without modification by the user */
 int		privileged_output = 0;
-
-/* Output which should not trigger %F in hidden windows */
-int		do_window_notifies = 1;
 
 /*
  * If set, outbound connections will be bind()ed to the address

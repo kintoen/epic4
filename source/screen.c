@@ -2341,7 +2341,7 @@ static void 	add_to_window (Window *window, const unsigned char *str)
 	 * this here.  This also avoids the terrible problem of 
 	 * recursive calls to split_up_line, which are bad.
 	 */
-	if (!window->screen && do_window_notifies)
+	if (!window->screen)
 	{
 		/*
 		 * This is for archon -- he wanted a way to have 
