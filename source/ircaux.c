@@ -1,4 +1,4 @@
-/* $EPIC: ircaux.c,v 1.103 2003/12/06 02:03:11 jnelson Exp $ */
+/* $EPIC: ircaux.c,v 1.104 2003/12/13 17:25:58 jnelson Exp $ */
 /*
  * ircaux.c: some extra routines... not specific to irc... that I needed 
  *
@@ -4102,7 +4102,7 @@ char *	malloc_strcat_wordlist_c (char **ptr, const char *word_delim, const char 
 char *	malloc_strcat_word_c (char **ptr, const char *word_delim, const char *word, size_t *clue)
 {
 	/* You MUST turn on extractw to get double quoted words */
-	if (!x_debug & DEBUG_EXTRACTW)
+	if (!(x_debug & DEBUG_EXTRACTW))
 		return malloc_strcat_wordlist_c(ptr, word_delim, word, clue);
 
 	if (word && *word)
