@@ -1,4 +1,4 @@
-/* $EPIC: newio.c,v 1.16 2003/05/09 04:29:52 jnelson Exp $ */
+/* $EPIC: newio.c,v 1.17 2003/12/06 02:03:11 jnelson Exp $ */
 /*
  * newio.c: This is some handy stuff to deal with file descriptors in a way
  * much like stdio's FILE pointers 
@@ -304,8 +304,6 @@ ssize_t	dgets (int des, char *buf, size_t buflen, int buffer, void *ssl_aux)
 	else
 	    return 0;
 }
-
-static	int global_max_fd = -1;
 
 /*
  * new_select: works just like select(), execpt I trimmed out the excess

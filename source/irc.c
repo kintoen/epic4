@@ -1,4 +1,4 @@
-/* $EPIC: irc.c,v 1.673 2003/12/26 19:14:49 crazyed Exp $ */
+/* $EPIC: irc.c,v 1.674 2003/12/26 19:36:58 crazyed Exp $ */
 /*
  * ircII: a new irc client.  I like it.  I hope you will too!
  *
@@ -233,6 +233,7 @@ char		*startup_file = NULL,		/* full path .epicrc file */
 
 fd_set		readables, held_readables;
 fd_set		writables, held_writables;
+int		global_max_fd = -1;
 
 
 static		char	switch_help[] =
