@@ -1800,11 +1800,7 @@ const 	u_char	*ptr;
 				int	lhs_count = 0;
 				int	continued_count = 0;
 
-                                /* Because Blackjac asked me to */
-                                if (indent > max_cols / 3)
-                                        indent = max_cols / 3;
-
-				if (do_indent &&
+				if (do_indent && (indent < (max_cols / 3)) &&
 					((int)strlen(cont_ptr) < indent))
 				{
 					size_t size = indent + 10;;
