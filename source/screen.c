@@ -1,4 +1,4 @@
-/* $EPIC: screen.c,v 1.69 2004/03/29 15:38:14 jnelson Exp $ */
+/* $EPIC: screen.c,v 1.70 2004/07/24 00:02:31 jnelson Exp $ */
 /*
  * screen.c
  *
@@ -1899,6 +1899,7 @@ const 	u_char	*ptr;
 			strlcpy(buffer, cont, sizeof(buffer) / 2);
 			display_attributes(buffer + strlen(buffer), &saved_a);
 			strlcat(buffer, pos_copy, sizeof(buffer) / 2);
+			display_attributes(buffer + strlen(buffer), &a);
 
 			pos = strlen(buffer);
 			/* Watch this -- ugh. how expensive! :( */
