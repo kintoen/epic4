@@ -1,4 +1,4 @@
-/* $EPIC: commands.c,v 1.78 2003/12/09 05:12:37 jnelson Exp $ */
+/* $EPIC: commands.c,v 1.79 2004/02/20 00:28:07 keerf Exp $ */
 /*
  * commands.c -- Stuff needed to execute commands in ircII.
  *		 Includes the bulk of the built in commands for ircII.
@@ -456,7 +456,7 @@ BUILT_IN_COMMAND(cd)
 	if ((arg = new_next_arg(args, &args)) != NULL)
 	{
 		if (normalize_filename(arg, dir))
-			say("CD: %s is not a valid directory", dir);
+			say("CD: %s contains an invalid directory", arg);
 		else if (chdir(dir))
 			say("CD: %s", strerror(errno));
 	}
@@ -2388,7 +2388,7 @@ static	const char *	mode[] = {"w", "a"};
 
 	if (normalize_filename(file, realfile))
 	{
-		say("%s is not a valid directory", realfile);
+		say("%s contains an invalid directory", file);
 		return;
 	}
 
