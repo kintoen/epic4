@@ -1,4 +1,4 @@
-/* $EPIC: dcc.c,v 1.88 2004/01/28 09:51:46 crazyed Exp $ */
+/* $EPIC: dcc.c,v 1.89 2004/02/20 19:44:32 jnelson Exp $ */
 /*
  * dcc.c: Things dealing client to client connections. 
  *
@@ -1876,6 +1876,8 @@ static	void	dcc_filesend (char *args)
                         say("%s is not a valid directory", fullname);
                         continue;
                 }
+#else
+		strlcpy(fullname, this_arg, sizeof fullname);
 #endif
 
 		/*
