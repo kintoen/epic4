@@ -1,4 +1,4 @@
-/* $EPIC: dcc.c,v 1.91 2004/02/20 23:40:22 jnelson Exp $ */
+/* $EPIC: dcc.c,v 1.92 2005/10/23 03:52:07 jnelson Exp $ */
 /*
  * dcc.c: Things dealing client to client connections. 
  *
@@ -1000,7 +1000,7 @@ static void	dcc_send_booster_ctcp (DCC_list *dcc)
 		send_ctcp(CTCP_PRIVMSG, dcc->user, CTCP_DCC,
 			 "%s %s %s %s %ld",
 			 type, url_name, p_host, p_port,
-			 dcc->filesize);
+			 (long)dcc->filesize);
 
 		/*
 		 * Tell the user we sent out the request

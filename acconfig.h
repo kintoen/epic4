@@ -320,3 +320,9 @@
 /* Define this if you have atoq() */
 #undef HAVE_ATOQ
 
+/* Define this if you have finite() */
+#undef HAVE_FINITE
+
+/* Define this if you have isfinite() */
+#undef HAVE_ISFINITE
+
