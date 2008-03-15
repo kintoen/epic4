@@ -407,10 +407,10 @@ case $# in
 esac
 
 sig_name="ZERO $*"
-if test -f include/sig.inc; then
-  /bin/rm -f include/sig.inc
+if test -f sig.inc; then
+  /bin/rm -f sig.inc
 fi
-[echo $sig_name | sed -e 's/$/"};/' -e 's/ /", "/g' -e 's/^/static char *sys_siglist[] = { "/' >> include/sig.inc]
+[echo $sig_name | sed -e 's/$/"};/' -e 's/ /", "/g' -e 's/^/static char *sys_siglist[] = { "/' >> sig.inc]
 fi
 
 dnl ----------------------------------------------------------
@@ -737,6 +737,11 @@ AC_SUBST(program_prefix)
 AC_SUBST(mandir)
 
 AC_OUTPUT(Makefile source/Makefile source/info.c.sh)
+
+dnl ---- BLAH BLAH BLAH ---
+if test -f sig.inc ; then
+    mv sig.inc include/
+fi
 
 
 dnl ----------------------------------------------------------
