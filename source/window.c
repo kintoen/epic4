@@ -1,4 +1,4 @@
-/* $EPIC: window.c,v 1.99 2007/07/04 13:39:33 jnelson Exp $ */
+/* $EPIC: window.c,v 1.100 2007/08/22 01:00:31 jnelson Exp $ */
 /*
  * window.c: Handles the organzation of the logical viewports (``windows'')
  * for irc.  This includes keeping track of what windows are open, where they
@@ -45,7 +45,7 @@
 #include "vars.h"
 #include "server.h"
 #include "list.h"
-#include "term.h"
+#include "termx.h"
 #include "names.h"
 #include "ircaux.h"
 #include "input.h"

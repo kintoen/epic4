@@ -1,4 +1,4 @@
-/* $EPIC: input.c,v 1.19 2004/02/03 19:36:52 wd Exp $ */
+/* $EPIC: input.c,v 1.20 2007/05/12 14:33:20 jnelson Exp $ */
 /*
  * input.c: does the actual input line stuff... keeps the appropriate stuff
  * on the input line, handles insert/delete of characters/words... the whole
@@ -57,7 +57,7 @@
 #include "screen.h"
 #include "server.h"
 #include "status.h"
-#include "term.h"
+#include "termx.h"
 #include "vars.h"
 #include "window.h"
 #include "output.h"
