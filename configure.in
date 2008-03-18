@@ -218,25 +218,32 @@ AC_CHECK_FUNC(isfinite, AC_DEFINE(HAVE_ISFINITE),)
 AC_CHECK_FUNC(tparm, AC_DEFINE(HAVE_TPARM),)
 
 dnl -- Oh why does this have to be so painful? --
-AC_MSG_CHECKING(whether c90 function prototypes work)
+AC_MSG_CHECKING(whether term.h works by itself)
 AC_TRY_RUN([
-extern int foozle (const char *, ...);
+#include <term.h>
 
 main ()
-{
-	extern int foozle();
-
-	foozle("blah blah");
-	exit(0);
-}
-
-int foozle (const char *strval, ...)
 {
 	exit(0);
 }
 ],
   AC_MSG_RESULT(yes),
-  AC_MSG_RESULT(no, bummer) , :)
+  AC_MSG_RESULT(no)
+  AC_MSG_CHECKING(whether term.h requires termio.h and curses.h)
+  AC_TRY_RUN([
+#include <termio.h>
+#include <curses.h>
+#include <term.h>
+
+main ()
+{
+	exit(0);
+}
+  ],
+  AC_MSG_RESULT(yes)
+  AC_MSG_RESULT(TERM_H_REQUIRES_CURSES_H),
+  AC_MSG_RESULT(no, ugh)
+  AC_MSG_RESULT(DONT_USE_TERM_H), :), :)
 
 AC_HEADER_STDC
 AC_HEADER_TIME
