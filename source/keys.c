@@ -1,4 +1,4 @@
-/* $EPIC: keys.c,v 1.32 2005/04/20 04:07:02 wd Exp $ */
+/* $EPIC: keys.c,v 1.33 2008/03/17 03:42:46 jnelson Exp $ */
 /*
  * keys.c:  Keeps track of what happens whe you press a key.
  *
@@ -811,7 +811,7 @@ void save_bindings_recurse (FILE *fp, struct Key *map, const unsigned char *str,
 	newstr[len] = c;
 	if (map[c].bound && map[c].changed) {
 	    bind_string_decompress(ds, newstr, len + 1);
-	    fprintf(fp, "BIND %s %s%s%s\n", ds, map[c].bound->name,
+	    fprintf(fp, "BIND \"%s\" %s%s%s\n", ds, map[c].bound->name,
 		    (map[c].stuff ? " " : ""),
 		    (map[c].stuff ? map[c].stuff : ""));
 	}
